@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop - All time coffee available</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        :root {
+            --mainColor: #be9c79;
+            --black: #333;
+            --white: #fff;
+            --lightColor: #666;
+            --border: .2rem solid var(--black);
+            --boxShadow: 0.5rem 1rem 1rem rgba(0, 0, 0, .1);
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .heading img {
+            height: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .heading h3 {
+            font-size: 4rem;
+            color: var(--black);
+            font-family: cursive;
+        }
+
+        .facility .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .facility .box-container .box {
+            text-align: center;
+            /* background-color: red; */
+        }
+
+        .facility .box-container .box img {
+            height: 10rem;
+            margin-bottom: .5rem;
+        }
+
+        .facility .box-container .box h3 {
+            font-size: 2rem;
+            color: var(--black);
+        }
+
+        .facility .box-container .box p {
+            line-height: 2;
+            font-size: 1.5rem;
+            color: var(--lightColor);
+        }
+
+        .menu .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(27rem, 30rem));
+            gap: 2rem;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .menu .box-container .box {
+            text-align: center;
+        }
+
+        .menu .box-container .box img {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+
+        .menu .box-container .box h3 {
+            font-size: 2rem;
+            color: var(--black);
+
+        }
+
+        .gallery .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 30rem);
+            gap: 1.5rem;
+            justify-content: center;
+
+        }
+
+        .gallery .box-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .team .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 30rem);
+            gap: 1.5rem;
+            justify-content: center;
+
+        }
+
+        .team .box-container .box h3 {
+            text-align: center;
+            color: var(--black);
+            font-size: 2rem;
+        }
+
+        .team .box-container img {
+            /* height: 100%; */
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .contact .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+
+        }
+
+        .contact .row .image {
+            flex: 1 1 50rem;
+        }
+
+        .contact .row .image img {
+            width: 100%;
+        }
+
+        .contact .row form {
+            flex: 1 1 30rem;
+            border: var(--border);
+            padding: 2rem;
+            text-align: center;
+
+        }
+
+        .contact .row form h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .contact .row form .box {
+            width: 100%;
+            padding: 1.4rem;
+            font-size: 1.8rem;
+            color: var(--black);
+            border: var(--border);
+            margin: 1rem 0;
+        }
+
+        .footer .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+            gap: 1.5rem;
+            align-items: flex-start;
+
+        }
+
+        .footer .box-container .box {
+            text-align: center;
+        }
+
+        .footer .box-container .box i {
+            font-size: 2.5rem;
+            line-height: 6rem;
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+            background-color: var(--mainColor);
+            color: var(--white);
+            margin-bottom: .5rem;
+
+        }
+
+        .footer .box-container .box h3 {
+            margin: 1rem 0;
+            font-size: 2rem;
+            color: var(--black);
+
+        }
+
+        .footer .box-container .box p {
+            font-size: 1.6rem;
+            line-height: 2;
+            color: var(--lightColor);
+        }
+
+        .footer .credit {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: var(--border);
+            font-size: 2rem;
+            color: var(--black);
+
+        }
+
+        .footer .credit span {
+            color: var(--mainColor);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <section class="flex">
+            <a href="#home" class="logo"><img src="img/logo.png" alt=""></a>
+
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#menu">menu</a>
+                <a href="#gallery">gallery</a>
+                <a href="#team">team</a>
+                <a href="#contact">contact</a>
+            </nav>
+
+
+            <div id="menu-btn" class="fas fa-bars"></div>
+
+        </section>
+
+
+
+    </div>
+
+    <!-- home section starts     -->
+
+    <div class="home-bg">
+        <section class="home" id="home">
+            <div class="content">
+                <h3>Coffee Heaven</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. Ut Officia, Accusantium Mollitia Laudantium
+                    Dolorum Dolore.</p>
+                <a href="#about" class="btn">about us</a>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- about section starts -->
+
+    <section class="about" id="about">
+        <div class="image">
+            <img src="img/about-img.svg" alt="">
+        </div>
+        <div class="content">
+            <h3>A Cup Of Coffee Can Complete Your Day</h3>
+            <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Veniam Suscipit Sunt Repellendus, Dolorum
+                Recusandae Placeat Quae. Iste Eaque Aspernatur, Animi Deleniti Voluptas, Sunt Molestias Eveniet Sint
+                Consectetur Facere A Ex.</p>
+            <a href="#menu" class="btn">Our Menu</a>
+        </div>
+
+    </section>
+
+    <!-- facility section starts -->
+
+    <section class="facility">
+        <div class="heading">
+            <img src="img/heading-img.png" alt="">
+            <h3>our facility</h3>
+        </div>
+
+
+        <div class="box-container">
+            <div class="box">
+
+                <img src="img/icon-1.png" alt="">
+                <h3>varieties of coffees</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Saepe, Adipisci!</p>
+            </div>
+
+            <div class="box">
+
+                <img src="img/icon-2.png" alt="">
+                <h3>Coffee Beans</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Saepe, Adipisci!</p>
+            </div>
+
+            <div class="box">
+
+                <img src="img/icon-3.png" alt="">
+                <h3>Breakfast And Sweets</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Saepe, Adipisci!</p>
+            </div>
+
+            <div class="box">
+
+                <img src="img/icon-4.png" alt="">
+                <h3>Read To Go Coffee</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Saepe, Adipisci!</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- menu section  -->
+
+    <section class="menu" id="menu">
+        <div class="heading">
+            <img src="img/heading-img.png" alt="">
+            <h3>popular menu</h3>
+        </div>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="img/menu-1.png" alt="">
+                <h3>Love You Coffee</h3>
+            </div>
+            <div class="box">
+                <img src="img/menu-2.png" alt="">
+                <h3>Cappuccino</h3>
+            </div>
+            <div class="box">
+                <img src="img/menu-3.png" alt="">
+                <h3>Mocha Coffee</h3>
+            </div>
+            <div class="box">
+                <img src="img/menu-4.png" alt="">
+                <h3>Frappuccino</h3>
+            </div>
+            <div class="box">
+                <img src="img/menu-5.png" alt="">
+                <h3> Black Coffee</h3>
+            </div>
+            <div class="box">
+                <img src="img/menu-6.png" alt="">
+                <h3>Love Heart Coffee</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- gallery section -->
+
+    <section class="gallery" id="gallery">
+        <div class="heading">
+            <img src="img/heading-img.png" alt="">
+            <h3>our gallery</h3>
+        </div>
+
+        <div class="box-container">
+            <img src="img/gallery-1.webp" alt="">
+            <img src="img/gallery-2.webp" alt="">
+            <img src="img/gallery-3.webp" alt="">
+            <img src="img/gallery-4.webp" alt="">
+            <img src="img/gallery-5.webp" alt="">
+            <img src="img/gallery-6.webp" alt="">
+        </div>
+    </section>
+
+    <!-- out teAM -->
+
+    <section class="team" id="team">
+        <div class="heading">
+            <img src="img/heading-img.png" alt="">
+            <h3>our team</h3>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="img/our-team-1.jpg" alt="">
+                <h3>John doe</h3>
+            </div>
+            <div class="box">
+                <img src="img/our-team-2.jpg" alt="">
+                <h3>John doe</h3>
+            </div>
+            <div class="box">
+                <img src="img/our-team-3.jpg" alt="">
+                <h3>John doe</h3>
+            </div>
+            <div class="box">
+                <img src="img/our-team-4.jpg" alt="">
+                <h3>John doe</h3>
+            </div>
+            <div class="box">
+                <img src="img/our-team-5.jpg" alt="">
+                <h3>John doe</h3>
+            </div>
+            <div class="box">
+                <img src="img/our-team-6.jpg" alt="">
+                <h3>John doe</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact  -->
+
+    <section class="contact" id="contact">
+        <div class="heading">
+            <img src="img/heading-img.png" alt="">
+            <h3>contact us</h3>
+        </div>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="img/contact-img.svg" alt="">
+            </div>
+
+            <form action="">
+                <h3>book a table</h3>
+                <input type="text" name="name" required class="box" maxlength="20" placeholder="Enter your name">
+                <input type="number" name="number" required class="box" maxlength="20" min="0" max="9999999999"
+                    placeholder="Enter your number" onkeydown="if(this.value.length==10) return false">
+
+
+                <input type="text" name="guests" required class="box" maxlength="20" min="0" max="99"
+                    placeholder="how many guests" onkeydown="if(this.value.length==2) return false">
+
+                <input type="submit" name="send" value="send message" class="btn">
+
+
+            </form>
+        </div>
+    </section>
+
+
+    <!-- foote section -->
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3>our mail</h3>
+                <p>example@gmail.com</p>
+
+            </div>
+            <div class="box">
+                <i class="fas fa-clock"></i>
+                <h3>opening hours</h3>
+                <p>07:00 am to 09:00 pm </p>
+
+            </div>
+
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>shop location</h3>
+                <p>mumbai , india - 400104</p>
+
+            </div>
+
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <h3>our number</h3>
+                <p>123456789</p>
+
+            </div>
+
+        </div>
+        <div class="credit">
+            &copy; copyright @2023 by <span>abbas gawali</span> | all rights reserved !
+        </div>
+    </section>
+
+
+
+
+
+    <!-- js section starts  -->
+
+    <script>
+        const menuBtn = document.querySelector("#menu-btn");
+        const navBar = document.querySelector(".header .flex .navbar")
+
+
+        menuBtn.onclick = () => {
+            menuBtn.classList.toggle('fa-times')
+            navBar.classList.toggle("active")
+
+        }
+        window.onscroll = () => {
+
+            menuBtn.classList.remove('fa-times')
+            navBar.classList.remove("active")
+        }
+
+
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
